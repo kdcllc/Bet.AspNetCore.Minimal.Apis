@@ -1,0 +1,2 @@
+GET https://{{host}}/todos
+Content-Type: {{contentType}}

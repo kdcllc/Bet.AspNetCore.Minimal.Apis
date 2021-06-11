@@ -1,0 +1,26 @@
+{
+    "rest-client.fontSize": 14,
+    "rest-client.environmentVariables": {
+        "$shared": {
+            "host": "localhost:5501",
+            "contentType": "application/json",
+            "version": "v1"
+        }
+    },
+
+    "files.trimTrailingWhitespace": true,
+
+    "files.associations": {
+        "*.*proj": "xml",
+        "*.props": "xml",
+        "*.targets": "xml",
+        "*.tasks": "xml",
+        "Dockerfile*": "dockerfile"
+    },
+
+    "dotnet-test-explorer.enableTelemetry": false,
+    "dotnet-test-explorer.testProjectPath": "/test/**/*.csproj",
+    "dotnet-test-explorer.autoExpandTree": true,
+    "dotnet-test-explorer.pathForResultFile": "TestResults",
+    "dotnet-test-explorer.addProblems": true
+}

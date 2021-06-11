@@ -1,0 +1,9 @@
+
+POST https://{{host}}/todos
+Content-Type: {{contentType}}
+
+{
+  "id": 1,
+  "title": "Learn todo app",
+  "iscompleted": false
+}

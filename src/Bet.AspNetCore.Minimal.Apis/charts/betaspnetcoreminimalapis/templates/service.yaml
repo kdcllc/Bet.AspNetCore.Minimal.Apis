@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "betaspnetcoreminimalapis.fullname" . }}
+  labels:
+    app: {{ template "betaspnetcoreminimalapis.name" . }}
+    chart: {{ template "betaspnetcoreminimalapis.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ template "betaspnetcoreminimalapis.name" . }}
+    release: {{ .Release.Name }}

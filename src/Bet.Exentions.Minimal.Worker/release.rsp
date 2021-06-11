@@ -1,0 +1,3 @@
+-p:Configuration=Release
+-p:OutputPath=..\rel-out\
+-p:PublishDir=..\pub-out\

@@ -1,0 +1,85 @@
+<Project>
+
+	<!-- Reference for the msbuild tags: https://docs.microsoft.com/en-us/dotnet/core/tools/csproj -->
+	<PropertyGroup>
+		<MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<DotNetCoreCommon>5.0.*</DotNetCoreCommon>
+		<BetCommon>3.1.11</BetCommon>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net6.0' Or '$(TargetFramework)' == 'netstandard2.1'">
+		<DotNetCoreCommon>6.0.0-preview.6.*</DotNetCoreCommon>
+	</PropertyGroup>
+
+	<ItemGroup Label="Microsoft.Extensions">
+		<PackageReference Update="Microsoft.Extensions.DependencyInjection" Version="$(DotNetCoreCommon)" />
+		<PackageReference Update="Microsoft.Extensions.Http.Polly" Version="$(DotNetCoreCommon)" />
+		<PackageReference Update="Microsoft.Extensions.Options" Version="$(DotNetCoreCommon)" />
+		<PackageReference Update="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.*" />
+	</ItemGroup>
+
+	<ItemGroup Label="Microsoft.Extensions.Hosting">
+		<PackageReference Update="Microsoft.Extensions.Hosting" Version="$(DotNetCoreCommon)" />
+		<PackageReference Update="Microsoft.Extensions.Hosting.Abstractions" Version="$(DotNetCoreCommon)" />
+	</ItemGroup>
+
+	<ItemGroup Label="Microsoft.Extensions.Configuration">
+		<PackageReference Update="Microsoft.Extensions.Configuration.Binder" Version="$(DotNetCoreCommon)" />
+		<PackageReference Update="Microsoft.Extensions.Configuration.Json" Version="$(DotNetCoreCommon)" />
+		<PackageReference Update="Microsoft.Extensions.Options" Version="$(DotNetCoreCommon)" />
+	</ItemGroup>
+
+	<ItemGroup Label="Microsoft.EntityFrameworkCore">
+		<PackageReference Update="Microsoft.EntityFrameworkCore" Version="$(DotNetCoreCommon)" />
+		<PackageReference Update="Microsoft.EntityFrameworkCore.InMemory" Version="$(DotNetCoreCommon)" />
+		<PackageReference Update="Microsoft.EntityFrameworkCore.Sqlite" Version="$(DotNetCoreCommon)" />
+	</ItemGroup>
+
+	<ItemGroup Label="Containers">
+		<PackageReference Update="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.14" />
+		<PackageReference Update="Microsoft.VisualStudio.Azure.Kubernetes.Tools.Targets" Version="1.1.0" />
+	</ItemGroup>
+
+	<ItemGroup Label="Microsoft.Extensions.Logging">
+		<PackageReference Update="Microsoft.Extensions.Logging" Version="$(DotNetCoreCommon)" />
+		<PackageReference Update="Microsoft.Extensions.Logging.Configuration" Version="$(DotNetCoreCommon)" />
+		<PackageReference Update="Microsoft.Extensions.Logging.Console" Version="$(DotNetCoreCommon)" />
+		<PackageReference Update="Microsoft.Extensions.Logging.Debug" Version="$(DotNetCoreCommon)" />
+	</ItemGroup>
+
+
+	<ItemGroup Label="Bet.Extensions">
+		<PackageReference Update="Bet.Extensions.Options" Version="$(BetCommon)" />
+		<PackageReference Update="Newtonsoft.Json" Version="12.0.3" />
+	</ItemGroup>
+
+	<ItemGroup Label="SourceLink">
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+	</ItemGroup>
+
+	<ItemGroup Label="Analyzers">
+		<PackageReference Include="Bet.CodeAnalyzers" Version="1.0.10">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Bet.EditorConfig" Version="1.0.10">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+
+		<!-- C# 10 compliler for VSCode VS.NET works without it -->
+		<PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="4.0.0-2.21310.25">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="../../img/icon.png" Pack="true" Visible="false" PackagePath="" />
+	</ItemGroup>
+
+</Project>

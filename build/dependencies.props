@@ -11,14 +11,13 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(TargetFramework)' == 'net6.0' Or '$(TargetFramework)' == 'netstandard2.1'">
-		<DotNetCoreCommon>6.0.0-preview.6.*</DotNetCoreCommon>
+		<DotNetCoreCommon>6.0.*</DotNetCoreCommon>
 	</PropertyGroup>
 
 	<ItemGroup Label="Microsoft.Extensions">
 		<PackageReference Update="Microsoft.Extensions.DependencyInjection" Version="$(DotNetCoreCommon)" />
 		<PackageReference Update="Microsoft.Extensions.Http.Polly" Version="$(DotNetCoreCommon)" />
 		<PackageReference Update="Microsoft.Extensions.Options" Version="$(DotNetCoreCommon)" />
-		<PackageReference Update="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.*" />
 	</ItemGroup>
 
 	<ItemGroup Label="Microsoft.Extensions.Hosting">
@@ -69,13 +68,6 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-
-		<!-- C# 10 compliler for VSCode VS.NET works without it -->
-		<PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="4.0.0-2.21310.25">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-
 	</ItemGroup>
 
 	<ItemGroup>

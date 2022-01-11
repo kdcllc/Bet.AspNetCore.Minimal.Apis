@@ -40,6 +40,10 @@ Samples with minimal APIs from the ASP.NET community stand up. These samples use
 
 - [Download .NET Preview builds](https://github.com/dotnet/installer#build-status)
 - [davidfowl/CommunityStandUpMinimalAPI](https://github.com/davidfowl/CommunityStandUpMinimalAPI)
+- https://github.com/martincostello/dotnet-minimal-api-integration-testing
+- [Integration Testing ASP.NET Core 6 Minimal APIs](https://dotnetthoughts.net/dotnet-minimal-api-integration-testing/)
+- https://github.com/anuraj/MinimalApi.git
+- https://github.com/dodyg/practical-aspnetcore/tree/net5.0/projects/net6
 
 ### .NET 6.0 Preview 1
 

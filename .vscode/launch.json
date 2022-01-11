@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/src/Bet.AspNetCore.Minimal.Apis/bin/Debug/net6.0/Bet.AspNetCore.Minimal.Apis.dll",
+            "program": "${workspaceFolder}/src/MinimalApisSample/bin/Debug/net6.0/MinimalApisSample.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/src/Bet.AspNetCore.Minimal.Apis",
+            "cwd": "${workspaceFolder}/src/MinimalApisSample",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",

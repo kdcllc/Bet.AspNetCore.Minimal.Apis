@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <UserSecretsId>dotnet-Bet.Exentions.Minimal.Worker-BBE5B394-782F-457F-9873-D8B9FB6759D6</UserSecretsId>
+    <UserSecretsId>dotnet-CSharp10Sample-BBE5B394-782F-457F-9873-D8B9FB6759D6</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
@@ -13,8 +13,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Kubernetes.Tools.Targets" />
   </ItemGroup>
 
-	<ItemGroup>
-		<Compile Include=".usings" />
-	</ItemGroup>
-	
+  <ItemGroup>
+    <Compile Include=".usings" />
+  </ItemGroup>
+
 </Project>

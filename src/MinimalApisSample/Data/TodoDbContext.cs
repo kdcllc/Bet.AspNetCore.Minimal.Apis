@@ -18,7 +18,7 @@ public class TodoDbContext : DbContext
         // disable null check for [required] properties
         optionsBuilder
             .LogTo(Console.WriteLine, new[] { InMemoryEventId.ChangesSaved })
-            .UseInMemoryDatabase("UserContextWithNullCheckingDisabled", b => b.EnableNullabilityCheck(false));
+            .UseInMemoryDatabase("UserContextWithNullCheckingDisabled", b => b.EnableNullChecks(false));
     }
 }
 #nullable restore

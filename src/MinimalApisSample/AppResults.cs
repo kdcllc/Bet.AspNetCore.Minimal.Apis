@@ -1,14 +1,14 @@
 ﻿public static class AppResults
 {
-    public static IResult NotFound() => new StatusCodeResult(404);
+    public static IResult NotFound() => Results.StatusCode(404);
 
-    public static IResult Ok() => new StatusCodeResult(200);
+    public static IResult Ok() => Results.StatusCode(200);
 
-    public static IResult Status(int statusCode) => new StatusCodeResult(statusCode);
+    public static IResult Status(int statusCode) => Results.StatusCode(statusCode);
 
-    public static OkResult<T> Ok<T>(T value) => new (value);
+    public static OkResult<T> Ok<T>(T value) => new(value);
 
-    public static CreatedAtRouteResult<T> CreatedAt<T>(T value, string endpointName, object values) => new (value, endpointName, values);
+    public static CreatedAtRouteResult<T> CreatedAt<T>(T value, string endpointName, object values) => new(value, endpointName, values);
 
     public class OkResult<T> : IResult
     {

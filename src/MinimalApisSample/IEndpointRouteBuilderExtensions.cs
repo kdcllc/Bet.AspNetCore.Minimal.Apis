@@ -21,7 +21,10 @@ public static class IEndpointRouteBuilderExtensions
             // Create a delegate mapping the route template and methods
             var del = RequestDelegateFactory.Create(method, context => objectFactory(context.RequestServices, null));
 
-            routes.MapMethods(attribute?.Template ?? "/", attribute?.HttpMethods ?? new List<string> { "HttpGetAttribute" }, del);
+            //routes.MapMethods(
+            //    attribute?.Template ?? "/",
+            //    attribute?.HttpMethods ?? new List<string> { "HttpGetAttribute" },
+            //    del);
         }
 
         return routes;

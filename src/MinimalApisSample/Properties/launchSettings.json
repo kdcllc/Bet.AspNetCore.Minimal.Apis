@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "Bet.AspNetCore.Minimal.Apis": {
+    "MinimalApisSample": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

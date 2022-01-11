@@ -4,10 +4,10 @@ build:
   context: ..\..
   dockerfile: Dockerfile
 install:
-  chart: charts/betexentionsminimalworker
+  chart: charts/betaspnetcoreminimalapis
   values:
-  - values.dev.yaml?
-  - secrets.dev.yaml?
+    - values.dev.yaml?
+    - secrets.dev.yaml?
   set:
     # Optionally, specify an array of imagePullSecrets. These secrets must be manually created in the namespace.
     # This will override the imagePullSecrets array in values.yaml file.
@@ -20,17 +20,17 @@ install:
     #   - name: myRegistryKeySecretName
     replicaCount: 1
     image:
-      repository: betexentionsminimalworker
+      repository: betaspnetcoreminimalapis
       tag: $(tag)
       pullPolicy: Never
     ingress:
       annotations:
         kubernetes.io/ingress.class: traefik-azds
       hosts:
-      # This expands to form the service's public URL: [space.s.][rootSpace.]betexentionsminimalworker.<random suffix>.<region>.azds.io
-      # Customize the public URL by changing the 'betexentionsminimalworker' text between the $(rootSpacePrefix) and $(hostSuffix) tokens
-      # For more information see https://aka.ms/devspaces/routing
-      - $(spacePrefix)$(rootSpacePrefix)betexentionsminimalworker$(hostSuffix)
+        # This expands to form the service's public URL: [space.s.][rootSpace.]betaspnetcoreminimalapis.<random suffix>.<region>.azds.io
+        # Customize the public URL by changing the 'betaspnetcoreminimalapis' text between the $(rootSpacePrefix) and $(hostSuffix) tokens
+        # For more information see https://aka.ms/devspaces/routing
+        - $(spacePrefix)$(rootSpacePrefix)betaspnetcoreminimalapis$(hostSuffix)
 configurations:
   develop:
     build:
@@ -40,12 +40,21 @@ configurations:
         BUILD_CONFIGURATION: ${BUILD_CONFIGURATION:-Debug}
     container:
       sync:
-      - "**/Pages/**"
-      - "**/Views/**"
-      - "**/wwwroot/**"
-      - "!**/*.{sln,csproj}"
-      command: [dotnet, run, --no-restore, --no-build, --no-launch-profile, -c, "${BUILD_CONFIGURATION:-Debug}"]
+        - "**/Pages/**"
+        - "**/Views/**"
+        - "**/wwwroot/**"
+        - "!**/*.{sln,csproj}"
+      command:
+        [
+          dotnet,
+          run,
+          --no-restore,
+          --no-build,
+          --no-launch-profile,
+          -c,
+          "${BUILD_CONFIGURATION:-Debug}",
+        ]
       iterate:
-        processesToKill: [dotnet, vsdbg, Bet.Exentions.Minimal.Worker]
+        processesToKill: [dotnet, vsdbg, MinimalApisSample]
         buildCommands:
-        - [dotnet, build, --no-restore, -c, "${BUILD_CONFIGURATION:-Debug}"]
+          - [dotnet, build, --no-restore, -c, "${BUILD_CONFIGURATION:-Debug}"]

@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "Bet.Exentions.Minimal.Worker": {
+    "CSharp10Sample": {
       "commandName": "Project",
       "environmentVariables": {
         "DOTNET_ENVIRONMENT": "Development"

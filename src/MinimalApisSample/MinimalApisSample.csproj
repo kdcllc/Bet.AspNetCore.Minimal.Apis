@@ -17,4 +17,8 @@
 		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.1.4" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\Bet.AspNetCore.Minimal.Api.Security\Bet.AspNetCore.Minimal.Api.Security.csproj" />
+	</ItemGroup>
+
 </Project>

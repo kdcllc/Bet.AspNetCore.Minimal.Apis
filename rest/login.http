@@ -1,0 +1,7 @@
+POST https://{{host}}/api/login
+Content-Type: {{contentType}}
+
+{
+    "username" : "user",
+    "password" : "pass"
+}

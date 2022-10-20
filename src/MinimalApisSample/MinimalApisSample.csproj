@@ -5,6 +5,7 @@
 		<UserSecretsId>80a2de24-756f-4597-91e7-91e32df6816f</UserSecretsId>
 		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
 		<DockerfileContext>..\..</DockerfileContext>
+		<IsPackable>false</IsPackable>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -15,6 +16,10 @@
 		<PackageReference Include="Microsoft.EntityFrameworkCore" />
 		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.1.4" />
 		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.1.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Bet.AspNetCore.Minimal.Apis\Bet.AspNetCore.Minimal.Apis.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -1,40 +1,41 @@
 <Project>
 
-  <PropertyGroup Label="Basic Settings">
-    <VersionPrefix>1.0.0-preview1</VersionPrefix>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
-    <LangVersion>preview</LangVersion>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup Label="Basic Settings">
+		<VersionPrefix>1.0.0-preview1</VersionPrefix>
+		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+		<SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
+		<LangVersion>preview</LangVersion>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
 
-  <PropertyGroup Label="Ownership Settings">
-    <Company>King David Consulting LLC</Company>
-    <Authors>kdcllc</Authors>
-    <Copyright>Copyright © King David Consulting LLC</Copyright>
-  </PropertyGroup>
+	<PropertyGroup Label="Ownership Settings">
+		<Company>King David Consulting LLC</Company>
+		<Authors>kdcllc</Authors>
+		<Copyright>Copyright © King David Consulting LLC</Copyright>
+	</PropertyGroup>
 
-  <PropertyGroup Label="Nuget Package Settings">
-    <Description>AspNetCore Minimal APIs.</Description>
-    <PackageProjectUrl>https://github.com/kdcllc/Bet.AspNetCore.Minimal.Apis</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/kdcllc/Bet.AspNetCore.Minimal.Apis.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageLicense>https://github.com/kdcllc/Bet.AspNetCore.Minimal.Apis/master/LICENSE</PackageLicense>
+	<PropertyGroup Label="Nuget Package Settings">
+		<Description>AspNetCore Minimal APIs.</Description>
+		<PackageProjectUrl>https://github.com/kdcllc/Bet.AspNetCore.Minimal.Apis</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/kdcllc/Bet.AspNetCore.Minimal.Apis.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicense>https://github.com/kdcllc/Bet.AspNetCore.Minimal.Apis/master/LICENSE</PackageLicense>
 
-    <!-- https://docs.microsoft.com/en-us/nuget/reference/errors-and-warnings/nu5048 -->
-    <PackageIcon>icon.png</PackageIcon>
+		<!-- https://docs.microsoft.com/en-us/nuget/reference/errors-and-warnings/nu5048 -->
+		<PackageIcon>icon.png</PackageIcon>
 
-    <PackageTags>AspNetCore, DotNet, DotNetCore, Extensions, Minimal WebApi</PackageTags>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-  </PropertyGroup>
+		<PackageTags>AspNetCore, DotNet, DotNetCore, Extensions, Minimal WebApi</PackageTags>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	</PropertyGroup>
 
-  <PropertyGroup Label="SourceLink Settings">
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+	<PropertyGroup Label="SourceLink Settings">
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
 
-    <DebugType>Embedded</DebugType>
-    <EmbedAllSources>True</EmbedAllSources>
-  </PropertyGroup>
+		<DebugType>Embedded</DebugType>
+		<EmbedAllSources>True</EmbedAllSources>
+	</PropertyGroup>
 </Project>

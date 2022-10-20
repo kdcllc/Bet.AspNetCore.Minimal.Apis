@@ -7,7 +7,9 @@
 
 	<PropertyGroup>
 		<DotNetCoreCommon>5.0.*</DotNetCoreCommon>
-		<BetCommon>3.1.11</BetCommon>
+		<BetAspNetCoreCommon>4.0.1</BetAspNetCoreCommon>
+		<BetCommon>4.0.1</BetCommon>
+		<SwashbuckleCommon>6.2.3</SwashbuckleCommon>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(TargetFramework)' == 'net6.0' Or '$(TargetFramework)' == 'netstandard2.1'">
@@ -38,7 +40,7 @@
 	</ItemGroup>
 
 	<ItemGroup Label="Containers">
-		<PackageReference Update="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.14" />
+		<PackageReference Update="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
 		<PackageReference Update="Microsoft.VisualStudio.Azure.Kubernetes.Tools.Targets" Version="1.1.0" />
 	</ItemGroup>
 
@@ -49,22 +51,41 @@
 		<PackageReference Update="Microsoft.Extensions.Logging.Debug" Version="$(DotNetCoreCommon)" />
 	</ItemGroup>
 
+	<ItemGroup Label="Swashbuckle">
+		<PackageReference Update="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0"/>
+		<PackageReference Update="Swashbuckle.AspNetCore.SwaggerGen" Version="$(SwashbuckleCommon)" />
+		<PackageReference Update="Swashbuckle.AspNetCore.SwaggerUI" Version="$(SwashbuckleCommon)" />
+	</ItemGroup>
 
 	<ItemGroup Label="Bet.Extensions">
 		<PackageReference Update="Bet.Extensions.Options" Version="$(BetCommon)" />
 		<PackageReference Update="Newtonsoft.Json" Version="12.0.3" />
 	</ItemGroup>
 
+	<ItemGroup Label="xUnitTests">
+		<PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+		<PackageReference Update="xunit" Version="2.4.1" />
+		<PackageReference Update="xunit.runner.visualstudio" Version="2.4.3">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Update="coverlet.collector" Version="3.1.0">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+	</ItemGroup>
+
+
 	<ItemGroup Label="SourceLink">
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
 	</ItemGroup>
 
 	<ItemGroup Label="Analyzers">
-		<PackageReference Include="Bet.CodeAnalyzers" Version="1.0.10">
+		<PackageReference Include="Bet.CodeAnalyzers" Version="1.0.12">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Bet.EditorConfig" Version="1.0.10">
+		<PackageReference Include="Bet.EditorConfig" Version="1.0.12">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>

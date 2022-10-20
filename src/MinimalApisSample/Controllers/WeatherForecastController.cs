@@ -1,4 +1,6 @@
 [ApiController]
+[ApiVersion("2.0")]
+[Route("v{version:apiVersion}/[controller]")]
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase
 {
